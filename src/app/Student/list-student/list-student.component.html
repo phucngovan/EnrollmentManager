@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>Bordered Table</h2>
+  <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
+  <table class="table table-bordered">
+    <thead style="background: bisque">
+    <tr>
+      <th class="hidden">ID</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of students">
+      <td class="hidden">{{student.id}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.phone}}</td>
+      <td><button class="btn btn-danger" (click)="deleteStudents(student)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
