@@ -28,6 +28,6 @@ export class StudentService {
   }
 
   public editStudent(student: Student): Observable<Student> {
-    return this.http.put<Student>(this.baseUrl + '/' + student.id, student);
+    return this.http.patch<Student>(this.baseUrl + '/' + student.id, student);
   }
 }

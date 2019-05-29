@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Student} from '../../student';
 import {StudentService} from '../../student.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-student',
@@ -10,7 +11,7 @@ import {StudentService} from '../../student.service';
 export class ListStudentComponent implements OnInit {
   students: Student[];
 
-  constructor(private studentService: StudentService) { }
+  constructor(private router: Router, private studentService: StudentService) { }
 
   ngOnInit() {
     this.getStudents();
@@ -23,6 +24,11 @@ export class ListStudentComponent implements OnInit {
       .subscribe( data => {
         this.students = this.students.filter(u => u !== student);
       });
+  }
+  editStudents(student: Student): void {
+    localStorage.removeItem('editStudentId');
+    localStorage.setItem('editStudentId', student.id.toString());
+    this.router.navigate(['edit-student']);
   }
 
 }
