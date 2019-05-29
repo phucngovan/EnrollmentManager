@@ -11,6 +11,8 @@ import { ListCourseComponent } from './Course/list-course/list-course.component'
 import { EditCourseComponent } from './Course/edit-course/edit-course.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { ListEnrollmentComponent } from './Enrollment/list-enrollment/list-enrollment.component';
+import { AddEnrollmentComponent } from './Enrollment/add-enrollment/add-enrollment.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import {HttpClientModule} from '@angular/common/http';
     EditStudentComponent,
     AddCourseComponent,
     ListCourseComponent,
-    EditCourseComponent
+    EditCourseComponent,
+    ListEnrollmentComponent,
+    AddEnrollmentComponent
   ],
   imports: [
     BrowserModule,
