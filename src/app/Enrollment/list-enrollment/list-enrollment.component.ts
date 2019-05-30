@@ -14,6 +14,7 @@ export class ListEnrollmentComponent implements OnInit {
   constructor(private router: Router, private enrollmentService: EnrollmentService) { }
 
   ngOnInit() {
+    this.getEnrollments()
   }
   getEnrollments(): void {
     this.enrollmentService.getEnrollment().subscribe(data => this.enrollments = data);
@@ -26,7 +27,7 @@ export class ListEnrollmentComponent implements OnInit {
   }
   editEnrollments(enrollment: Enrollment): void {
     localStorage.removeItem('editEnrollmentId');
-    localStorage.setItem('editEnrollmentsId', enrollment.id.toString());
+    localStorage.setItem('editEnrollmentId', enrollment.id.toString());
     this.router.navigate(['edit-enrollment']);
   }
 
