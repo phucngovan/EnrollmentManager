@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>List Enrollment</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name-Student</th>
+    <th scope="col">Name-Course</th>
+    <th scope="col">Start-Date</th>
+    <th scope="col">And-Date</th>
+    <th scope="col">Delete</th>
+    <th scope="col">Edit</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let enrollment of enrollments">
+    <th scope="row">#</th>
+    <td>{{enrollment.student.name}}</td>
+    <td>{{enrollment.course.name}}</td>
+    <td>{{enrollment.startDate}}</td>
+    <td>{{enrollment.endDate}}</td>
+    <td><button class="btn btn-danger" (click)="deleteEnrollments(enrollment)">Delete</button></td>
+<!--    <td><button class="btn btn-success" (click)="editStudents(student)">Edit</button></td>-->
+  </tr>
+  </tbody>
+</table>
+</div>
